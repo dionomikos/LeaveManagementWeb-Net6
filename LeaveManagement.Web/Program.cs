@@ -1,6 +1,8 @@
 using LeaveManagement.Web.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using AutoMapper;
+using LeaveManagement.Web.Configurations;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +15,10 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 // Στην επόμενη γραμμή γράφω την βάση δεδομένων στην οποία θέλω να συνδέομαι. Εδώ Employee
 builder.Services.AddDefaultIdentity<Employee>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();
+
+// Παρακάτω θα πρέπει να δηλώσω στο πρόγραμμα μου το Configuration MapperConfig.cs το οποίο δημιούργησα ώστε να το λάβει υπόψη
+builder.Services.AddAutoMapper(typeof(MapperConfig));
+
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();

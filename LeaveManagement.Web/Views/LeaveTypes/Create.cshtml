@@ -1,0 +1,57 @@
+﻿<!-- This is a typical Bootstrap form -->
+@model LeaveTypeVM
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create Leave Type</h1>
+
+<h4>LeaveType</h4>
+<hr />
+<div class="row">
+    <!-- Εάν θέλουμε να κάνουμε τα πεδία μεγαλύτερα μπορούμε να βάλουμε ένα md-8 ή md-12 αν θέλουμε να καταλαμβάνει όλη την οθόνη ->
+    <div class="col-md-12">
+        <!-- Η επόμενη γραμμή μας λέει το σε ποια κατέυθυνση θα κάνουμε addressing μετά το κλικ 
+             Στην γραμμή αυτή μπορώ να προσθέσω και το method αν είναι get ή post. By default είναι post
+        -->
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <br/>
+            <div class="form-group">
+                <label asp-for="DefaultDays" class="control-label"></label>
+                <input asp-for="DefaultDays" class="form-control" />
+                <span asp-validation-for="DefaultDays" class="text-danger"></span>
+            </div>
+            <br/>
+            <!-- Τον παρακάτω κώδικα τον κάνουμε comment ή καλύτερα το διαγράφουμε γιατί δεν θέλουμε ο χρήστης να βλέπει αυτά τα πεδία
+                <div class="form-group">
+                <label asp-for="DateCreated" class="control-label"></label>
+                <input asp-for="DateCreated" class="form-control" />
+                <span asp-validation-for="DateCreated" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateModified" class="control-label"></label>
+                <input asp-for="DateModified" class="form-control" />
+                <span asp-validation-for="DateModified" class="text-danger"></span>
+            </div> 
+            -->
+            <div class="form-group">
+                <a asp-action="Index" class="btn btn-dark">Back to List</a> &nbsp;
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+
+        <div>
+            
+        </div>
+
+        </form>
+    </div>
+
+
+
